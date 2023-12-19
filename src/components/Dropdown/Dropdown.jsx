@@ -25,3 +25,7 @@ class Dropdown extends React.Component {
 }
 
 export default Dropdown;
+
+// объявляем состояние
+// делаем тоггл через this.setState от предыдущего состояния
+// рендерим разметку, в которой перерисовывается кнопка

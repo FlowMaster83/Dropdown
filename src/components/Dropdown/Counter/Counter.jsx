@@ -69,12 +69,14 @@ class Counter extends Component {
     value: 0,
   };
 
-  handleClick = event => {
+  handleClickIncrement = event => {
     // this.setState({ value: 1 });
-    this.setState(prevState => {
-      console.log(prevState);
-      return { value: prevState.value + 1 };
-    });
+    this.setState(prevState => ({ value: prevState.value + 1 }));
+  };
+
+  handleClickDecrement = event => {
+    // this.setState({ value: 1 });
+    this.setState(prevState => ({ value: prevState.value - 1 }));
   };
 
   render() {
@@ -82,10 +84,10 @@ class Counter extends Component {
       <div>
         <p>{this.state.value}</p>
         <div>
-          <button type="button" onClick={this.handleClick}>
+          <button type="button" onClick={this.handleClickIncrement}>
             +
           </button>
-          <button type="button" onClick={this.handleClick}>
+          <button type="button" onClick={this.handleClickDecrement}>
             -
           </button>
         </div>

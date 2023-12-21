@@ -1,5 +1,37 @@
 import { Component } from 'react';
 
+class Counter extends Component {
+  state = {
+    value: 0,
+  };
+
+  handleClickIncrement = () =>
+    // this.setState({ value: 1 });
+    this.setState(prevState => ({ value: prevState.value + 1 }));
+
+  handleClickDecrement = () =>
+    // this.setState({ value: 1 });
+    this.setState(prevState => ({ value: prevState.value - 1 }));
+
+  render() {
+    return (
+      <div>
+        <p>{this.state.value}</p>
+        <div>
+          <button type="button" onClick={this.handleClickIncrement}>
+            +
+          </button>
+          <button type="button" onClick={this.handleClickDecrement}>
+            -
+          </button>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+
 // let total = 0;
 
 // const Counter = () => {
@@ -62,38 +94,6 @@ import { Component } from 'react';
 контекст.сетСтейт(предыдущий стейт => return {ключ: предыдущий стейт + 1})
 this.setState(prevState            => return {value: prevState.value +1}})
 
+prevState - свободное название
+
 */
-
-class Counter extends Component {
-  state = {
-    value: 0,
-  };
-
-  handleClickIncrement = event => {
-    // this.setState({ value: 1 });
-    this.setState(prevState => ({ value: prevState.value + 1 }));
-  };
-
-  handleClickDecrement = event => {
-    // this.setState({ value: 1 });
-    this.setState(prevState => ({ value: prevState.value - 1 }));
-  };
-
-  render() {
-    return (
-      <div>
-        <p>{this.state.value}</p>
-        <div>
-          <button type="button" onClick={this.handleClickIncrement}>
-            +
-          </button>
-          <button type="button" onClick={this.handleClickDecrement}>
-            -
-          </button>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default Counter;

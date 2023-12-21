@@ -6,17 +6,18 @@ class Counter extends Component {
   };
 
   handleClickIncrement = () =>
-    // this.setState({ value: 1 });
+    // this.setState({ value: 1 }); // перезапись стейта
     this.setState(prevState => ({ value: prevState.value + 1 }));
 
   handleClickDecrement = () =>
-    // this.setState({ value: 1 });
     this.setState(prevState => ({ value: prevState.value - 1 }));
 
   render() {
+    const { value } = this.state; // деструктуризация
+    // console.log(this.state); // {value: 0}
     return (
       <div>
-        <p>{this.state.value}</p>
+        <p>{value}</p>
         <div>
           <button type="button" onClick={this.handleClickIncrement}>
             +

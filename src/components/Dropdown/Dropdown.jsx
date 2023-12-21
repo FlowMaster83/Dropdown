@@ -1,10 +1,12 @@
 import React from 'react';
+import { Container, Button } from './Dropdown.styled';
 
 class Dropdown extends React.Component {
   state = {
     visible: false,
   };
 
+  // изменение состояния от предыдущего
   toggle = () => {
     this.setState(prevState => ({
       visible: !prevState.visible,
@@ -13,13 +15,13 @@ class Dropdown extends React.Component {
 
   render() {
     return (
-      <div>
-        <button type="button" onClick={this.toggle}>
-          {this.state.visible ? 'Hide menu' : 'Show menu'}
-        </button>
+      <Container>
+        {this.state.visible && <Container>Menu</Container>}
 
-        {this.state.visible && <div>Menu</div>}
-      </div>
+        <Button type="button" onClick={this.toggle}>
+          {this.state.visible ? 'Hide menu' : 'Show menu'}
+        </Button>
+      </Container>
     );
   }
 }

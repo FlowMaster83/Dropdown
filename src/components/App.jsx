@@ -1,18 +1,9 @@
 import { Component } from 'react';
 import Header from './Header/Header';
-import Counter from './Counter/Counter';
-
+import Counter from './Counter/Counter'
+import ToDoList from './ToDoList/ToDoList';
 import Modal from './Modal/Modal';
-
-// export const App = () => {
-//   return (
-//     <>
-//       {/* <Dropdown /> */}
-//       {/* <Counter /> */}
-//       {true && <Modal></Modal>}
-//     </>
-//   );
-// };
+import Dropdown from './Dropdown/Dropdown';
 
 class App extends Component {
   state = {
@@ -30,17 +21,17 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+		<Dropdown />
         <Header showModal={this.showModal} />
         <Counter />
+        <ToDoList />
         {this.state.isShowModal && (
           <Modal closeModal={this.closeModal}>Some</Modal>
         )}
+
       </div>
     );
   }
 }
 
 export default App;
-
-// расширяем App в зависимость от Component
-// метод showModal прокидываем, как проп компоненту Header

@@ -4,7 +4,7 @@ import Counter from './Counter/Counter';
 import ToDoList from './ToDoList/ToDoList';
 import Modal from './Modal/Modal';
 import Dropdown from './Dropdown/Dropdown';
-import Form  from './Form/Form';
+import Form from './Form/Form';
 
 class App extends Component {
   state = {
@@ -21,9 +21,14 @@ class App extends Component {
     this.setState({ isShowModal: false });
   };
 
+  // метод для сабмита формы
+  formSubmitHandler = data => {
+    console.log(data);
+  };
+
   render() {
     return (
-      <div className="container">
+      <div>
         <Dropdown />
         <Header showModal={this.showModal} />
         <Counter />
@@ -31,7 +36,8 @@ class App extends Component {
         {this.state.isShowModal && (
           <Modal closeModal={this.closeModal}>Some</Modal>
         )}
-        <Form />
+        {/* получение доступа к форме при её сабмите */}
+        <Form onSubmit={this.formSubmitHandler} />
       </div>
     );
   }

@@ -1,10 +1,11 @@
 import React from 'react';
+import { Element, InputStyle } from './ToDo.styled';
 
 const ToDo = ({ todo, handleCheckCompleted, handleDelete }) => {
   return (
     <li className="list-group-item">
-      <div className="row justify-content-between">
-        <div className="col-10">
+      <Element>
+        <InputStyle className="col-10">
           <input
             className="form-check-input me-2"
             type="checkbox"
@@ -12,16 +13,18 @@ const ToDo = ({ todo, handleCheckCompleted, handleDelete }) => {
             onChange={() => handleCheckCompleted(todo.id)}
           />
           {todo.title}
-        </div>
+        </InputStyle>
         <div className="col">
           <button
             type="button"
             className="btn-close"
             aria-label="Close"
             onClick={() => handleDelete(todo.id)}
-          >X</button>
+          >
+            Delete Task
+          </button>
         </div>
-      </div>
+      </Element>
     </li>
   );
 };

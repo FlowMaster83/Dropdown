@@ -1,4 +1,10 @@
 import { Component } from 'react';
+import {
+  Button,
+  CounterContainer,
+  Span,
+  ButtonsContainer,
+} from './Counter.styled';
 
 class Counter extends Component {
   state = {
@@ -16,17 +22,18 @@ class Counter extends Component {
     const { value } = this.state; // деструктуризация
     // console.log(this.state); // {value: 0}
     return (
-      <div>
-        <p>{value}</p>
-        <div>
-          <button type="button" onClick={this.handleClickIncrement}>
-            +
-          </button>
-          <button type="button" onClick={this.handleClickDecrement}>
-            -
-          </button>
-        </div>
-      </div>
+      <CounterContainer>
+        <Span>Counter: </Span>
+        <ButtonsContainer>
+          <Button type="button" onClick={this.handleClickIncrement}>
+            <Span>More</Span>
+          </Button>
+          <Span>{value}</Span>
+          <Button type="button" onClick={this.handleClickDecrement}>
+            <Span>Less</Span>
+          </Button>
+        </ButtonsContainer>
+      </CounterContainer>
     );
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToDo from '../ToDo/ToDo';
 import todo from '../../todo.json';
+import { Caption, ToDoContainer, List } from './ToDoList.styled';
 
 class ToDoList extends Component {
   state = {
@@ -23,9 +24,9 @@ class ToDoList extends Component {
 
   render() {
     return (
-      <>
-        <h1>My To-Do list</h1>
-        <ul className="list-group list-group-flush">
+      <ToDoContainer>
+        <Caption>ToDo list</Caption>
+        <List>
           {this.state.todoList.map(todo => (
             <ToDo
               key={todo.id}
@@ -34,8 +35,8 @@ class ToDoList extends Component {
               handleDelete={this.handleDelete}
             />
           ))}
-        </ul>
-      </>
+        </List>
+      </ToDoContainer>
     );
   }
 }

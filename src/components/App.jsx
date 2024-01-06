@@ -5,11 +5,13 @@ import ToDoList from './ToDoList/ToDoList';
 import Modal from './Modal/Modal';
 import Dropdown from './Dropdown/Dropdown';
 import Form from './Form/Form';
+import TodoEditor from './TodoEditor/TodoEditor';
+import shortid from 'shortid';
 
 class App extends Component {
   state = {
     isShowModal: false,
-  };
+  }
 
   // сетстейт это регистрация события, которая обновляет интерфейс асинхронно (после выполнения синх кода)
   // за один сетстейт можно обновлять сколько угодно состояний
@@ -37,7 +39,8 @@ class App extends Component {
           <Modal closeModal={this.closeModal}>Some</Modal>
         )}
         {/* получение доступа к форме при её сабмите */}
-        <Form onSubmit={this.formSubmitHandler} />
+        {/* <Form onSubmit={this.formSubmitHandler} /> */}
+        {/* <TodoEditor onSubmit={this.addTodo} /> */}
       </div>
     );
   }

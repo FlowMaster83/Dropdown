@@ -13,9 +13,7 @@ const Modal = ({ children, closeModal }) => {
               className="btn-close"
               aria-label="Close"
               onClick={closeModal}
-            >
-              Close
-            </button>
+            ></button>
           </div>
           <div className="modal-body">{children}</div>
         </div>

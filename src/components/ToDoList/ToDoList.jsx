@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import ToDo from '../ToDo/ToDo';
 import todo from '../../todo.json';
 import { Caption, ToDoContainer, List } from './ToDoList.styled';

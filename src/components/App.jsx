@@ -5,7 +5,6 @@ import ToDoList from './ToDoList/ToDoList';
 import Modal from './Modal/Modal';
 import Dropdown from './Dropdown/Dropdown';
 import Form from './Form/Form';
-import shortid from 'shortid';
 import FormLogin from './FormLogin/FormLogin';
 import { nanoid } from 'nanoid';
 
@@ -41,10 +40,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <Dropdown /> */}
+        <Dropdown />
         <Header showModal={this.showModal} />
-        {/* <Counter /> */}
-        {/* <ToDoList /> */}
+        <Counter />
+        <ToDoList />
         {this.state.isShowModal && (
           <Modal closeModal={this.closeModal}>
             <FormLogin
@@ -54,7 +53,7 @@ class App extends Component {
           </Modal>
         )}
         {/* получение доступа к форме при её сабмите */}
-        {/* <Form onSubmit={this.formSubmitHandler} /> */}
+        <Form onSubmit={this.formSubmitHandler} />
       </div>
     );
   }

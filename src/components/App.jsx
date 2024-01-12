@@ -5,7 +5,6 @@ import ToDoList from './ToDoList/ToDoList';
 import Modal from './Modal/Modal';
 import Dropdown from './Dropdown/Dropdown';
 import Form from './Form/Form';
-import TodoEditor from './TodoEditor/TodoEditor';
 import shortid from 'shortid';
 import FormLogin from './FormLogin/FormLogin';
 import FormRegistration from './FormRegistration/FormRegistration';
@@ -48,7 +47,6 @@ class App extends Component {
         )}
         {/* получение доступа к форме при её сабмите */}
         {/* <Form onSubmit={this.formSubmitHandler} /> */}
-        {/* <TodoEditor onSubmit={this.addTodo} /> */}
 
         <FormRegistration />
       </div>

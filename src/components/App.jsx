@@ -7,7 +7,7 @@ import Dropdown from './Dropdown/Dropdown';
 import Form from './Form/Form';
 import shortid from 'shortid';
 import FormLogin from './FormLogin/FormLogin';
-import FormRegistration from './FormRegistration/FormRegistration';
+import { nanoid } from 'nanoid';
 
 class App extends Component {
   state = {
@@ -30,7 +30,12 @@ class App extends Component {
   };
 
   createUser = data => {
-    console.log(data);
+    const newUser = {
+      ...data,
+      id: nanoid(),
+    };
+
+    console.log(newUser);
   };
 
   render() {
@@ -42,13 +47,14 @@ class App extends Component {
         {/* <ToDoList /> */}
         {this.state.isShowModal && (
           <Modal closeModal={this.closeModal}>
-            <FormLogin createUser={this.createUser} />
+            <FormLogin
+              createUser={this.createUser}
+              closeModal={this.closeModal}
+            />
           </Modal>
         )}
         {/* получение доступа к форме при её сабмите */}
         {/* <Form onSubmit={this.formSubmitHandler} /> */}
-
-        <FormRegistration />
       </div>
     );
   }

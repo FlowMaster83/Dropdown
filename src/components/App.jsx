@@ -7,10 +7,19 @@ import Dropdown from './Dropdown/Dropdown';
 import Form from './Form/Form';
 import FormLogin from './FormLogin/FormLogin';
 import { nanoid } from 'nanoid';
+import { RecipeForm } from './RecipeForm/RecipeForm';
 
 class App extends Component {
   state = {
     isShowModal: false,
+  };
+
+  addRecipe = newRecipe => {
+    this.setState(prevState => {
+      return {
+        recipes: [...prevState.recipes, newRecipe],
+      };
+    });
   };
 
   // сетстейт это регистрация события, которая обновляет интерфейс асинхронно (после выполнения синх кода)
@@ -40,20 +49,21 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Dropdown />
-        <Header showModal={this.showModal} />
-        <Counter />
-        <ToDoList />
-        {this.state.isShowModal && (
+        {/* <Dropdown /> */}
+        {/* <Header showModal={this.showModal} /> */}
+        {/* <Counter /> */}
+        {/* <ToDoList /> */}
+        {/* {this.state.isShowModal && (
           <Modal closeModal={this.closeModal}>
             <FormLogin
               createUser={this.createUser}
               closeModal={this.closeModal}
             />
           </Modal>
-        )}
+        )} */}
         {/* получение доступа к форме при её сабмите */}
-        <Form onSubmit={this.formSubmitHandler} />
+        {/* <Form onSubmit={this.formSubmitHandler} /> */}
+        <RecipeForm onSubmit={this.addRecipe} />
       </div>
     );
   }

@@ -48,7 +48,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
         {/* <Dropdown /> */}
         {/* <Header showModal={this.showModal} /> */}
         {/* <Counter /> */}
@@ -64,7 +64,7 @@ class App extends Component {
         {/* получение доступа к форме при её сабмите */}
         {/* <Form onSubmit={this.formSubmitHandler} /> */}
         <RecipeForm onSubmit={this.addRecipe} />
-      </div>
+      </>
     );
   }
 }

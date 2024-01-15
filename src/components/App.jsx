@@ -63,7 +63,7 @@ class App extends Component {
         )}
         {/* получение доступа к форме при её сабмите */}
         <Form onSubmit={this.formSubmitHandler} />
-        <RecipeForm onSubmit={this.addRecipe} />
+        <RecipeForm onSave={this.addRecipe} />
       </>
     );
   }

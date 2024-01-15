@@ -17,7 +17,7 @@ const RecipeSchema = Yup.object().shape({
     .required('Required'),
 });
 
-export const RecipeForm = ({ onSubmit }) => {
+export const RecipeForm = ({ onSave }) => {
   return (
     <Formik
       // изначальное состояние под капотом (аналог state={})
@@ -30,7 +30,7 @@ export const RecipeForm = ({ onSubmit }) => {
       }}
       validationSchema={RecipeSchema}
       onSubmit={(values, actions) => {
-        onSubmit({
+        onSave({
           ...values,
           id: nanoid,
         });

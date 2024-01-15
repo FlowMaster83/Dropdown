@@ -49,20 +49,20 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <Dropdown /> */}
-        {/* <Header showModal={this.showModal} /> */}
-        {/* <Counter /> */}
-        {/* <ToDoList /> */}
-        {/* {this.state.isShowModal && (
+        <Dropdown />
+        <Header showModal={this.showModal} />
+        <Counter />
+        <ToDoList />
+        {this.state.isShowModal && (
           <Modal closeModal={this.closeModal}>
             <FormLogin
               createUser={this.createUser}
               closeModal={this.closeModal}
             />
           </Modal>
-        )} */}
+        )}
         {/* получение доступа к форме при её сабмите */}
-        {/* <Form onSubmit={this.formSubmitHandler} /> */}
+        <Form onSubmit={this.formSubmitHandler} />
         <RecipeForm onSubmit={this.addRecipe} />
       </>
     );

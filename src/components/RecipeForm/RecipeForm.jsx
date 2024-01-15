@@ -5,10 +5,10 @@ import { nanoid } from 'nanoid';
 
 // через библу yup пишем схему валидации (объект)
 const RecipeSchema = Yup.object().shape({
-//   name: Yup.string()
-//     .min(2, 'Too Short!')
-//     .max(50, 'Too Long!')
-//     .required('Required'),
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
   time: Yup.number().positive('more than 0').required('Required'),
   servings: Yup.number().positive('more than 0').required('Required'),
   calories: Yup.number().positive('more than 0').required('Required'),
@@ -22,7 +22,7 @@ export const RecipeForm = ({ onSubmit }) => {
     <Formik
       // изначальное состояние под капотом (аналог state={})
       initialValues={{
-        // name: '',
+        name: '',
         time: 0,
         servings: 0,
         calories: 0,
@@ -38,11 +38,11 @@ export const RecipeForm = ({ onSubmit }) => {
       }}
     >
       <Form>
-        {/* <FormField>
+        <FormField>
           Name
           <Field name="name" />
           <ErrorMessage name="name" component="span" />
-        </FormField> */}
+        </FormField>
 
         <FormField>
           Time
